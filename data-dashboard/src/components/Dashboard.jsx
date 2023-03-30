@@ -18,9 +18,8 @@ function Dashboard() {
     const hash = md5(ts + privateKey + publicKey);
     
     const fetchCharacters = async () => {
-      setURL(`https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}&orderBy=-modified&limit=100`);
       const response = await fetch(
-        url
+        `https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}&orderBy=-modified&limit=100`
       );
       const responseData = await response.json();
       const allCharacters = responseData.data.results;
@@ -71,6 +70,9 @@ function Dashboard() {
   
     setCharacters(filteredCharacters);
   };
+  const changeURLtoAscending = () => {
+      setURL(`https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}&orderBy=name&limit=100`);
+  }
   
 
   return (
@@ -135,6 +137,16 @@ function Dashboard() {
       <div className="dashboard-search-container">
         <input type="text" placeholder="Search characters..." onChange={handleSearch} />
       </div>
+      <button
+        onClick={changeURLtoAscending}
+      >
+        Ascending Order
+      </button>
+      <button
+        onClick={changeURLtoAscending}
+      >
+        Descending Order
+      </button>
       <div className="dashboard-characters-container">
         {characters.map(character => (
           <div className="dashboard-character-box" key={character.id}>
