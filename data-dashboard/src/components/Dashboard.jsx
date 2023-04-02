@@ -1,3 +1,4 @@
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { useState, useEffect } from 'react';
 import md5 from 'md5';
 import './Dashboard.css';
@@ -10,6 +11,14 @@ function Dashboard() {
   const [mostStories, setMostStories] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [url, setURL] = useState();
+  const chartData = characters.map(character => {
+    return {
+      name: character.name,
+      comics: character.comics.available,
+      series: character.series.available,
+      stories: character.stories.available,
+    };
+  });
 
   useEffect(() => {
     const publicKey = '7d3fa950f8a194731d92a69b9331f79e';
@@ -169,6 +178,19 @@ function Dashboard() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="dashboard-chart-container">
+        <h2>Number of Comics, Series, and Stories Available for Each Character</h2>
+        <BarChart width={800} height={400} data={chartData}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="comics" fill="#8884d8" />
+          <Bar dataKey="series" fill="#82ca9d" />
+          <Bar dataKey="stories" fill="#ffc658" />
+        </BarChart>
       </div>
     </div>
   );
