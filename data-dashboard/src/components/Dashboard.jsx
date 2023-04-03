@@ -1,6 +1,8 @@
+import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { useState, useEffect } from 'react';
 import md5 from 'md5';
+import { Link } from 'react-router-dom';
 import './Dashboard.css';
 
 function Dashboard() {
@@ -159,14 +161,16 @@ function Dashboard() {
       <div className="dashboard-characters-container">
         {characters.map(character => (
           <div className="dashboard-character-box" key={character.id}>
-            <h3>{character.name}</h3>
-            {character.description ? (
+            <Link to={`/characters/${character.id}`}>
+              {character.name}
+            </Link>
+            {/* {character.description ? (
             <p>{character.description}</p>
             ) : (
             <p>No description available.</p>
-            )}
+            )} */}
             <div>
-              <p>
+              {/* <p>
                 <strong>Comics:</strong> {character.comics.available}
               </p>
               <p>
@@ -174,7 +178,7 @@ function Dashboard() {
               </p>
               <p>
                 <strong>Stories:</strong> {character.stories.available}
-              </p>
+              </p> */}
             </div>
           </div>
         ))}
