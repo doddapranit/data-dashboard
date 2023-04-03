@@ -1,30 +1,27 @@
-# Web Development Project 5 - *Data Dashboard*
+# Web Development Project 6 - *Data Dashboard 2*
 
 Submitted by: **Pranit Dodda**
 
 This web app: **marvel**
 
-Time spent: **5** hours spent in total
+Time spent: **6** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x] **The list displays a list of data fetched using an API call**
-- [x] **Data uses the useEffect React hook and async/await syntax**
-- [x] **The app dashboard includes at least three summary statistics about the data such as**
-  - [ ] *# of series and description*
-- [x] **A search bar allows the user to search for an item in the fetched data**
-- [x] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
+- [x] **The app includes at least one unique chart developed using the fetched data that tell an interesting story**
+- [x] **Clicking on an item in the list view displays more details about it**
+- [x] **Clicking on an item has a direct, unique link to that item's detail view page**
+
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-![](https://github.com/doddapranit/data-dashboard/blob/main/data-dashboard/src/assets/veni.gif)
+![](https://github.com/doddapranit/data-dashboard/blob/main/data-dashboard/src/assets/dashboard2.gif)
 
 GIF created with LICEcap v1.28 for macOS
-
 
 
 ## Notes
@@ -33,7 +30,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright 2023 data dashbaord
+    Copyright 2023 data dashboard
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
