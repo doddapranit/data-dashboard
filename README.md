@@ -14,9 +14,6 @@ Here's a walkthrough of implemented user stories:
 GIF created with LICEcap v1.28 for macOS
 
 
-## Notes
-
-Describe any challenges encountered while building the app.
 
 ## License
 
